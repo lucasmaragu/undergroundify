@@ -6,7 +6,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <i className="bx bxs-music text-red-500 text-3xl"></i>
-              <span className="text-xl font-bold tracking-tight">UnderBeats</span>
+              <span className="text-xl font-bold tracking-tight">Undergroundify</span>
             </div>
             <p className="text-zinc-400 max-w-md">
               The ultimate platform for discovering and enjoying Spain's underground music scene.
@@ -95,7 +95,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-zinc-500 text-sm">© 2025 UnderBeats. All rights reserved.</p>
+          <p className="text-zinc-500 text-sm">© 2025 Undergroundify. All rights reserved.</p>
 
           <div className="flex gap-4">
             <a href="#" className="text-zinc-400 hover:text-white">

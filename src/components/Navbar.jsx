@@ -16,7 +16,7 @@ const Navbar = ({ onMenuClick }) => {
 
             <div className="flex items-center gap-2">
               <i className="bx bxs-music text-red-500 text-3xl"></i>
-              <span className="text-xl font-bold tracking-tight">UnderBeats</span>
+              <span className="text-xl font-bold tracking-tight">Undergroundify</span>
             </div>
           </div>
 
@@ -29,7 +29,7 @@ const Navbar = ({ onMenuClick }) => {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-zinc-900 border border-zinc-700 rounded-full py-2 pl-10 pr-4 focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500"
               />
-              <i className="bx bx-search absolute left-3 top-2.5 text-zinc-400"></i>
+              <i className="bx bx-search mt-1 absolute left-3 top-2.5 text-zinc-400"></i>
             </div>
           </div>
 

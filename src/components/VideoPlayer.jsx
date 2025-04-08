@@ -8,6 +8,7 @@ const VideoPlayer = ({ video, onNext }) => {
   const [duration, setDuration] = useState(0)
   const [volume, setVolume] = useState(1)
   const [showVolumeControl, setShowVolumeControl] = useState(false)
+  const [volumeControlLocked, setVolumeControlLocked] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(false)
 
   const videoRef = useRef(null)
@@ -130,19 +131,23 @@ const VideoPlayer = ({ video, onNext }) => {
                 <div className="relative">
                   <button
                     className="text-white p-1 rounded-full hover:bg-black/30"
-                    onMouseEnter={() => setShowVolumeControl(true)}
-                    onMouseLeave={() => setShowVolumeControl(false)}
+                    onMouseEnter={() => !volumeControlLocked && setShowVolumeControl(true)}
+                    onMouseLeave={() => !volumeControlLocked && setShowVolumeControl(false)}
+                    onClick={() => {
+                      setVolumeControlLocked(!volumeControlLocked)
+                      setShowVolumeControl(!volumeControlLocked)
+                    }}
                   >
                     <i
                       className={`bx ${volume === 0 ? "bx-volume-mute" : volume < 0.5 ? "bx-volume-low" : "bx-volume-full"} text-xl`}
                     ></i>
                   </button>
 
-                  {showVolumeControl && (
+                  {(showVolumeControl || volumeControlLocked) && (
                     <div
                       className="absolute bottom-full left-0 mb-2 p-2 bg-zinc-800 rounded shadow-lg"
-                      onMouseEnter={() => setShowVolumeControl(true)}
-                      onMouseLeave={() => setShowVolumeControl(false)}
+                      onMouseEnter={() => !volumeControlLocked && setShowVolumeControl(true)}
+                      onMouseLeave={() => !volumeControlLocked && setShowVolumeControl(false)}
                     >
                       <input
                         type="range"
